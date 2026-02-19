@@ -1,0 +1,23 @@
+<h1>Quiz</h1>
+
+<?php if (!empty($error)) : ?>
+    <p class="error"><?= htmlspecialchars($error) ?></p>
+<?php endif; ?>
+
+<div class="form-container">
+    <form method="post" class="form">
+        <p class="question"><?= htmlspecialchars($question['content'] ?? '') ?></p>
+
+        <div class="answers">
+            <?php foreach (($answers ?? []) as $a) : ?>
+                <label class="answer">
+                    <input type="radio" name="answer" value="<?= (int)$a['id_answer'] ?>" required>
+                    <span><?= htmlspecialchars($a['content']) ?></span>
+                </label>
+            <?php endforeach; ?>
+        </div>
+
+        <button class="btn-validate" type="submit">Valider</button>
+        <a class="restart-link" href="quiz.php?restart=1">Recommencer</a>
+    </form>
+</div>

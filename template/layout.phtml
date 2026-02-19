@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= htmlspecialchars($title ?? 'Akinator Zelda') ?></title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+    <a class="brand" href="index.php">Accueil</a>
+
+    <nav class="nav">
+        <?php if (!empty($_SESSION['player'])) : ?>
+            <a href="account.php">Mon compte</a>
+            <a href="logout.php">Déconnexion</a>
+        <?php else : ?>
+            <a href="login.php">Connexion</a>
+            <a href="register.php">Inscription</a>
+        <?php endif; ?>
+    </nav>
+</header>
+
+<main class="container">
+    <?php if (!empty($flash)) : ?>
+        <p class="flash"><?= htmlspecialchars($flash) ?></p>
+    <?php endif; ?>
+
+    <?php include $template; ?>
+</main>
+
+<footer class="site-footer">
+    <p>© 2026 3W Academy - All rights reserved</p>
+</footer>
+</body>
+</html>

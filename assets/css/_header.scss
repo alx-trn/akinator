@@ -1,0 +1,38 @@
+.site-header {
+  background-color: var(--primary);
+  color: var(--white-pierre);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  a {
+    color: var(--white-pierre);
+    text-decoration: none;
+    margin: 0 .5rem;
+    font-weight: bold;
+    transition: color .3s ease;
+
+    &:hover { text-decoration: underline; }
+  }
+}
+
+.site-footer {
+  background-color: var(--accent);
+  color: var(--brown-cuir);
+  text-align: center;
+  padding: 1rem;
+  font-size: .9rem;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    text-align: center;
+
+    nav { margin-top: 1rem; }
+  }
+}
