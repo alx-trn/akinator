@@ -1,0 +1,46 @@
+.site-header {
+  background-color: var(--primary);
+  color: var(--white-pierre);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  a {
+    color: var(--white-pierre);
+    text-decoration: none;
+    margin: 0 0.75rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .brand {
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+}
+
+.site-footer {
+  background-color: var(--accent);
+  color: var(--brown-cuir);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+
+    nav {
+      margin-top: 0.25rem;
+    }
+  }
+}

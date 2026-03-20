@@ -1,0 +1,25 @@
+<h1>Mon compte</h1>
+
+<div class="card">
+    <p><strong>Pseudo :</strong> <?= htmlspecialchars($player['pseudo'] ?? '') ?></p>
+    <p><strong>Email :</strong> <?= htmlspecialchars($player['email'] ?? '') ?></p>
+</div>
+
+<div class="card">
+    <h2>Historique des parties</h2>
+
+    <?php if (empty($games)) : ?>
+        <p>Aucune partie enregistrée pour le moment.</p>
+    <?php else : ?>
+        <ul class="games">
+            <?php foreach ($games as $g) : ?>
+                <li>
+                    <span><?= htmlspecialchars($g['played_at'] ?? '') ?></span>
+                    — <strong><?= htmlspecialchars($g['result_name'] ?? '') ?></strong>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+</div>
+
+<p><a class="btn" href="?page=quiz&restart=1">Rejouer</a></p>

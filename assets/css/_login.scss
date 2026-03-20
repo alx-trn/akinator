@@ -1,0 +1,33 @@
+.form-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 480px;
+}
+
+.form {
+  label {
+    font-weight: 600;
+    text-align: left;
+    width: 100%;
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 0.6rem 0.85rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+
+    &:focus {
+      outline: 2px solid var(--primary);
+      border-color: var(--primary);
+    }
+  }
+}

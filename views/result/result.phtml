@@ -1,0 +1,28 @@
+<h1>Résultat</h1>
+
+<?php if (empty($result)) : ?>
+    <p>Résultat introuvable.</p>
+    <p><a class="btn" href="?page=quiz&restart=1">Recommencer</a></p>
+<?php else : ?>
+    <?php
+        $image = $result['image'] ?? '';
+        if ($image !== '' && strpos($image, '/') === false) {
+            $image = 'assets/img/' . $image;
+        }
+    ?>
+
+    <p class="result-lead">
+        Je parie que tu pensais à... <strong><?= htmlspecialchars($result['name'] ?? '') ?></strong>
+    </p>
+
+    <?php if (!empty($image)) : ?>
+        <img class="result-img" src="<?= htmlspecialchars($image) ?>" alt="<?= htmlspecialchars($result['name'] ?? 'Résultat') ?>">
+    <?php endif; ?>
+
+    <p class="result-desc"><?= nl2br(htmlspecialchars($result['description'] ?? '')) ?></p>
+
+    <div class="result-actions">
+        <a class="btn" href="?page=quiz&restart=1">Rejouer</a>
+        <a class="btn" href="?page=home">Accueil</a>
+    </div>
+<?php endif; ?>
