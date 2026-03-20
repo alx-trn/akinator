@@ -2,11 +2,10 @@
 
 require_once __DIR__ . '/../repositories/GameRepository.php';
 
-function redirectTo(string $path): void
-{
-    header('Location: ' . $path);
-    exit;
-}
+// function redirectTo(string $path): void{
+//     header('Location: ' . $path);
+//     exit;
+// }
 
 if (empty($_SESSION['player'])) {
     redirectTo('?page=login');

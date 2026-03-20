@@ -4,9 +4,9 @@ require_once __DIR__ . '/../repositories/QuestionRepository.php';
 require_once __DIR__ . '/../repositories/AnswerRepository.php';
 require_once __DIR__ . '/../services/Csrf.php';
 
-function redirectTo(string $path): void { 
-    header('Location: ' . $path); exit; 
-}
+// function redirectTo(string $path): void { 
+//     header('Location: ' . $path); exit; 
+// }
 
 if (empty($_SESSION['player'])) {
     redirectTo('?page=login');

@@ -1,4 +1,11 @@
 <?php
+
+session_start();
+
+function redirectTo(string $path): void { 
+    header('Location: ' . $path); exit; 
+}
+
 $page = $_GET['page'] ?? 'home';
 
 require __DIR__ . '/configs/settings.php';

@@ -3,7 +3,9 @@
 require_once __DIR__ . '/../repositories/UserRepository.php';
 require_once __DIR__ . '/../services/Csrf.php';
 
-function redirectTo(string $path): void { header('Location: ' . $path); exit; }
+// function redirectTo(string $path): void { 
+//     header('Location: ' . $path); exit; 
+// }
 
 if (!empty($_SESSION['player'])) {
     redirectTo('?page=account');
@@ -26,8 +28,8 @@ if (!empty($_POST)) {
     if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = 'Email invalide.';
     }
-    if ($password !== '' && strlen($password) < 6) {
-        $errors[] = 'Mot de passe trop court (min. 6 caractères).';
+    if ($password !== '' && !preg_match('/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@#$!%*?&])[A-Za-z\d@#$!%*?&]{8,}$/', $password)) {
+    $errors[] = 'Le mot de passe doit contenir au moins 8 caractères, une lettre, un chiffre et un caractère spécial.';
     }
 
     if (!$errors) {
