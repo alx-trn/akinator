@@ -1,4 +1,33 @@
+# Variables d'environnement locales
+env/.env.local
+env/.env.production
+.env.local
 .env
-/vendor
 
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Logs
 *.log
+logs/
+
+# IDE/Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Dépendances (si Composer ajouté à l'avenir)
+vendor/
+composer.lock
+
+# Uploads/Files dynamiques (si applicable)
+uploads/
+temporary/
+
+# Cache
+cache/
+tmp/
+node_modules/
